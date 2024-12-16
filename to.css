@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4675d3, #4e085f);
+    padding: 10px;
+}
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2),  /* Main shadow */
+                0 6px 6px rgba(0, 0, 0, 0.15),  /* Soft shadow */
+                inset 0 2px 4px rgba(255, 255, 255, 0.5); /* Subtle inner glow */
+    transform: perspective(800px) rotateX(2deg) rotateY(-2deg); /* Adds a 3D tilt */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.todo-app:hover {
+    transform: perspective(800px) rotateX(5deg) rotateY(-5deg); /* Enhanced 3D tilt on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 
+                0 10px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.todo-app h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 14px; 
+}
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(checked.png);
+}
+ul li span{
+position: absolute;
+right: 0;
+top: 5px;
+width: 40px;
+height: 40px;
+font-size: 22px;
+color: #555;
+line-height: 40px;
+text-align: center;
+border-radius: 50%;
+}
+ul li span:hover{
+    background: #edeef0;
+    
+}
